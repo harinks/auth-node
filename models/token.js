@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//token sechma, token is stored for verfication 
+//after verfication the token will be deleted from token collection in db.
 const tokenSchema = new Schema({
 	userId: {
 		type: Schema.Types.ObjectId,
