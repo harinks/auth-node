@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 // routes
+// register
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/password-reset", passwordResetRoutes);
