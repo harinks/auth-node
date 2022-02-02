@@ -17,6 +17,7 @@ app.use(cors());
 // routes
 // register
 app.use("/api/users", userRoutes);
+// login
 app.use("/api/auth", authRoutes);
 app.use("/api/password-reset", passwordResetRoutes);
 
