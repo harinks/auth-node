@@ -19,6 +19,7 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 // login
 app.use("/api/auth", authRoutes);
+// forget and reset password
 app.use("/api/password-reset", passwordResetRoutes);
 
 const port = process.env.PORT || 3001;

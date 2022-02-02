@@ -7,7 +7,7 @@ const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
 const bcrypt = require("bcrypt");
 
-// send password link
+// send password link to mail
 router.post("/", async (req, res) => {
 	try {
 		const emailSchema = Joi.object({
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
 				token: crypto.randomBytes(32).toString("hex"),
 			}).save();
 		}
-
+		// email with token is sent
 		const url = `${process.env.BASE_URL}password-reset/${user._id}/${token.token}/`;
 		await sendEmail(user.email, "Password Reset", url);
 
